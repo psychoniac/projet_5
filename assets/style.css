@@ -206,7 +206,7 @@ header {
 #banner .arrow {
   position: absolute;
 }
-#banner #arrow_left {
+#banner .arrow_left {
   position: absolute;
   right: 800px;
   top: -50px;

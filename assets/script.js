@@ -1,5 +1,15 @@
+//creation des variables
 const leftArrow = document.querySelector(".arrow_left");
-console.log("leftArrow");
+const rightArrow = document.querySelector(".arrow_right");
+console.log(leftArrow);
+console.log(rightArrow);
+//mis en place d'un eventListener sur les fleches
+leftArrow.addEventListener("click", () => {
+  alert("yes");
+});
+rightArrow.addEventListener("click", () => {
+  alert("no");
+});
 
 const slides = [
   {
