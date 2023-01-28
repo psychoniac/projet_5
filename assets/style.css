@@ -134,8 +134,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-body {
-}
+
 section {
   margin-block: 6em;
 }
@@ -207,15 +206,15 @@ header {
 #banner .arrow {
   position: absolute;
 }
-#banner .arrow_left {
+#banner #arrow_left {
   position: absolute;
-  right: 600px;
-  top: -20px;
+  right: 800px;
+  top: -50px;
 }
 #banner .arrow_right {
   position: absolute;
-  left: 450px;
-  top: -20px;
+  right: -800px;
+  top: -50px;
 }
 /* Gestion des points du carrousel */
 .dots {
