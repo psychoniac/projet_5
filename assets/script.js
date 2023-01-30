@@ -2,6 +2,7 @@
 const leftArrow = document.querySelector(".left_arrow");
 const rightArrow = document.querySelector(".right_arrow");
 const bulletsPointContener = document.querySelector(".dots");
+const sliderContener = document.querySelector("#banner");
 
 const slides = [
   {
@@ -22,6 +23,7 @@ const slides = [
     tagLine: "Autocollants <span>avec découpe laser sur mesure</span>",
   },
 ];
+console.log(slides);
 
 //mis en place d'un eventListener sur les fleches
 leftArrow.addEventListener("click", () => {
@@ -44,3 +46,12 @@ for (let slide = 0; slide < numberSlide; slide++) {
 //création du bullet point actif
 const activeBulletPoint = document.querySelector(".dot");
 activeBulletPoint.classList.add("dot_selected");
+
+//création des balises images qui vont contenir les slides
+for (let slide = 0; slide < numberSlide; slide++) {
+  const imageSlider = document.createElement("img");
+  sliderContener.appendChild(imageSlider);
+  // imageSlider.src = ;
+  imageSlider.classList.add("banner-img");
+  console.log(imageSlider);
+}
