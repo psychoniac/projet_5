@@ -27,10 +27,10 @@ const slides = [
 
 //mis en place d'un eventListener sur les fleches
 leftArrow.addEventListener("click", () => {
-  alert("left");
+  console.log("left");
 });
 rightArrow.addEventListener("click", () => {
-  alert("right");
+  console.log("right");
 });
 
 //comptage des slides
@@ -48,9 +48,10 @@ const activeBulletPoint = document.querySelector(".dot");
 activeBulletPoint.classList.add("dot_selected");
 
 //création des balises images qui vont contenir les slides
+
 for (let slide = 0; slide < numberSlide; slide++) {
   const imageSlider = document.createElement("img");
-  sliderContener.appendChild(imageSlider);
+  sliderContener.prepend(imageSlider);
   //generation du texte du slide
   textSlide.innerHTML = slides[slide].tagLine;
   //rajout du chemin de l'image
