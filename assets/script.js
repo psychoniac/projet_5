@@ -3,6 +3,7 @@ const leftArrow = document.querySelector(".left_arrow");
 const rightArrow = document.querySelector(".right_arrow");
 const bulletsPointContener = document.querySelector(".dots");
 const sliderContener = document.querySelector("#banner");
+const textSlide = document.querySelector("p");
 
 const slides = [
   {
@@ -50,6 +51,8 @@ activeBulletPoint.classList.add("dot_selected");
 for (let slide = 0; slide < numberSlide; slide++) {
   const imageSlider = document.createElement("img");
   sliderContener.appendChild(imageSlider);
+  //generation du texte du slide
+  textSlide.innerHTML = slides[slide].tagLine;
   //rajout du chemin de l'image
   imageSlider.src = "assets/images/slideshow/" + slides[slide].image;
   //rajout de la classe banner-img
