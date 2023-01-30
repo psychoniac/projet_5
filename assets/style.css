@@ -206,15 +206,15 @@ header {
 #banner .arrow {
   position: absolute;
 }
-#banner .arrow_left {
+.right_arrow {
   position: absolute;
-  right: 800px;
-  top: -50px;
+  top: 50%;
+  right: -1000%;
 }
-#banner .arrow_right {
+.left_arrow {
   position: absolute;
-  right: -800px;
-  top: -50px;
+  top: 50%;
+  left: -1000%;
 }
 /* Gestion des points du carrousel */
 .dots {

@@ -1,15 +1,7 @@
 //creation des variables
-const leftArrow = document.querySelector(".arrow_left");
-const rightArrow = document.querySelector(".arrow_right");
-console.log(leftArrow);
-console.log(rightArrow);
-//mis en place d'un eventListener sur les fleches
-leftArrow.addEventListener("click", () => {
-  alert("yes");
-});
-rightArrow.addEventListener("click", () => {
-  alert("no");
-});
+const leftArrow = document.querySelector(".left_arrow");
+const rightArrow = document.querySelector(".right_arrow");
+const bulletsPointContener = document.querySelector(".dots");
 
 const slides = [
   {
@@ -30,3 +22,25 @@ const slides = [
     tagLine: "Autocollants <span>avec découpe laser sur mesure</span>",
   },
 ];
+
+//mis en place d'un eventListener sur les fleches
+leftArrow.addEventListener("click", () => {
+  alert("left");
+});
+rightArrow.addEventListener("click", () => {
+  alert("right");
+});
+
+//comptage des slides
+const numberSlide = slides.length;
+
+//on boucle sur numberSlide pour avoir le nombre de bullet point correspondant au nombre de slide
+
+for (let slide = 0; slide < numberSlide; slide++) {
+  const bulletPoint = document.createElement("div");
+  bulletsPointContener.appendChild(bulletPoint);
+  bulletPoint.classList.add("dot");
+}
+//création du bullet point actif
+const activeBulletPoint = document.querySelector(".dot");
+activeBulletPoint.classList.add("dot_selected");
