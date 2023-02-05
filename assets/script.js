@@ -66,14 +66,18 @@ function changeSlide(sens) {
   let slide = document.querySelector(".banner-img");
   //on modifie le src du slide en fonction de la variable numeroSlide  
   slide.src = "./assets/images/slideshow/" + (slides[numeroSlide].image);
-  //ne pas oublier le texte qui correspond au slide
+  
+  //creation du texte present sur l'image
   //on creer la variable qui va contenir le texte du slide
   let textSlide = document.querySelector("p");
   //on injecte du contenu dans text slide en fonction de numeroSlide
   textSlide.innerHTML = slides[numeroSlide].tagLine;
- //création du bullet point actif
+ 
+  //création du bullet point actif
+  let numeroSlideActif = slides[numeroSlide].id;
+  console.log(numeroSlideActif);
   //je selectionne l'enfant du bulletsPointContener en fonction du numero du slide 
-  let activeBulletPoint = bulletsPointContener.children[numeroSlide];
+  let activeBulletPoint = bulletsPointContener.children[numeroSlideActif];
   //j'injecte la class dot-selected avec toggle pour que la class ne reste pas  
   activeBulletPoint.classList.toggle("dot_selected");
 
