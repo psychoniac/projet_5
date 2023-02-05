@@ -67,7 +67,10 @@ function changeSlide(sens) {
   //on modifie le src du slide en fonction de la variable numeroSlide  
   slide.src = "./assets/images/slideshow/" + (slides[numeroSlide].image);
   //ne pas oublier le texte qui correspond au slide
-
+  //on creer la variable qui va contenir le texte du slide
+  let textSlide = document.querySelector("p");
+  //on injecte du contenu dans text slide en fonction de numeroSlide
+  textSlide.innerHTML = slides[numeroSlide].tagLine;
  //création du bullet point actif
   //je selectionne l'enfant du bulletsPointContener en fonction du numero du slide 
   let activeBulletPoint = bulletsPointContener.children[numeroSlide];
