@@ -50,14 +50,25 @@ let numeroSlide = 0;
 function changeSlide(sens) {
   numeroSlide = numeroSlide + sens;
   if (numeroSlide < 0)
-    numeroSlide = 3;
-  if (numeroSlide >= 4)
+    numeroSlide = numberSlide - 1;
+  if (numeroSlide >= numberSlide)
     numeroSlide = 0;
   let slide = document.querySelector(".banner-img");
   slide.src = "./assets/images/slideshow/" + (slides[numeroSlide].image);
+  //ne pas oublier le texte qui correspond au slide
+  
+  
+  
+  //création du bullet point actif
+  //je selectionne l'enfant du bulletsPointContener en fonction du numero du slide 
+  let activeBulletPoint = bulletsPointContener.children[numeroSlide];
+  //j'injecte la class dot-selected 
+  activeBulletPoint.classList.add("dot_selected");
+
+
+
 }
 //on boucle sur numberSlide pour avoir le nombre de bullet point correspondant au nombre de slide
-
 for (let slide = 0; slide < numberSlide; slide++) {
   const bulletPoint = document.createElement("div");
   //on rattache notre element a la div #dots
@@ -65,6 +76,3 @@ for (let slide = 0; slide < numberSlide; slide++) {
   //on injecte la class dot a chaque div crée
   bulletPoint.classList.add("dot");
 }
-//création du bullet point actif
-const activeBulletPoint = document.querySelector(".dot");
-activeBulletPoint.classList.add("dot_selected");
