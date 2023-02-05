@@ -38,34 +38,41 @@ const numberSlide = slides.length;
 //mis en place d'un eventListener sur les fleches
 leftArrow.addEventListener("click", () => {
   changeSlide(-1);
-
+ 
 })
 
 rightArrow.addEventListener("click", () => {
   changeSlide(1);
+   
+ 
 })
 
-//function qui fait varier les slides 
+
+
+
+
+//function principale du slider 
 let numeroSlide = 0;
 function changeSlide(sens) {
+  //on ajoute a numeroSlide 1 ou -1 en fonction du bouton cliquez
   numeroSlide = numeroSlide + sens;
+  //on fait en sorte que quand le premier slide est afficher et que l'on clique sur left on affiche le slide 4
   if (numeroSlide < 0)
     numeroSlide = numberSlide - 1;
+  // si c'est le slide 4 on revient au premier slide
   if (numeroSlide >= numberSlide)
     numeroSlide = 0;
+  //on creer la variable slide 
   let slide = document.querySelector(".banner-img");
+  //on modifie le src du slide en fonction de la variable numeroSlide  
   slide.src = "./assets/images/slideshow/" + (slides[numeroSlide].image);
   //ne pas oublier le texte qui correspond au slide
-  
-  
-  
-  //création du bullet point actif
+
+ //création du bullet point actif
   //je selectionne l'enfant du bulletsPointContener en fonction du numero du slide 
   let activeBulletPoint = bulletsPointContener.children[numeroSlide];
-  //j'injecte la class dot-selected 
-  activeBulletPoint.classList.add("dot_selected");
-
-
+  //j'injecte la class dot-selected avec toggle pour que la class ne reste pas  
+  activeBulletPoint.classList.toggle("dot_selected");
 
 }
 //on boucle sur numberSlide pour avoir le nombre de bullet point correspondant au nombre de slide
