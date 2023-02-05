@@ -49,6 +49,10 @@ rightArrow.addEventListener("click", () => {
 let numeroSlide = 0;
 function changeSlide(sens) {
   numeroSlide = numeroSlide + sens;
+  if (numeroSlide < 0)
+    numeroSlide = 3;
+  if (numeroSlide >= 4)
+    numeroSlide = 0;
   let slide = document.querySelector(".banner-img");
   slide.src = "./assets/images/slideshow/" + (slides[numeroSlide].image);
 }
