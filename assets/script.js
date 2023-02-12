@@ -66,25 +66,30 @@ function changeSlide(sens) {
   bulletPointActif(numeroSlide);
  
 }
+//fonction qui fait le src du slide 
 function slide(numeroSlide) {
     //on creer la variable slide 
     let slide = document.querySelector(".banner-img");
     //on modifie le src du slide en fonction de la variable numeroSlide  
     slide.src = "./assets/images/slideshow/" + (slides[numeroSlide].image);
   }
-  
+
+//fonction qui change le texte en fonction du slide actif 
 function changeTexte(numeroSlide) {
-  //creation du texte present sur l'image
   //on creer la variable qui va contenir le texte du slide
   let textSlide = document.querySelector("p");
   //on injecte du contenu dans text slide en fonction de numeroSlide
   textSlide.innerHTML = slides[numeroSlide].tagLine;
 }  
-function bulletPointActif(numeroSlide){
- //creation du bullet point actif
-  //je selectionne l'enfant du bulletsPointContener en fonction du numero du slide
+
+//fonction qui gere les bullets point actif ou inactif
+function bulletPointActif(numeroSlide) {
+  //declaration des variables 
   let activeBulletPoint = bulletsPointContener.children[numeroSlide];
-  //j'injecte la class dot-selected avec toggle pour que la class ne reste pas  
+  let inactifBulletPoint = bulletsPointContener.children[numeroSlide - 1];
+ 
+  //j'injecte la class dot-selected avec add sur le slide actif
   activeBulletPoint.classList.add("dot_selected");
-  //il faut faire une ligne avec classList.add et une autre avec classList.remove
+  //je supprime la class dot_selected sur le slide actif -1
+  inactifBulletPoint.classList.remove("dot_selected");
 }
