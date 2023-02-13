@@ -208,13 +208,11 @@ header {
 }
 .right_arrow {
   position: absolute;
-  top: 50%;
-  right: -1000%;
+  left:  350px;
 }
 .left_arrow {
   position: absolute;
-  top: 50%;
-  left: -1000%;
+  right:350px
 }
 /* Gestion des points du carrousel */
 .dots {
